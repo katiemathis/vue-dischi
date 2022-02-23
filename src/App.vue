@@ -1,18 +1,28 @@
 <template>
   <div id="app">
     <MyHeader />
+    <MainContent />
     
   </div>
 </template>
 
 <script>
-import MyHeader from './components/MyHeader.vue'
+
+
+import MyHeader from './components/MyHeader.vue';
+import MainContent from './components/MainContent.vue'
 
 export default {
   name: 'App',
   components: {
     MyHeader,
-  }
+    MainContent,
+   },
+   
+
+
+    
+
 }
 </script>
 
@@ -22,6 +32,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container header_container">
       <div class="row header col-1">
           <img class="img-fluid" src="../assets/logo-green.png" alt="">
       </div>
@@ -17,7 +17,7 @@ export default {
 <style scoped lang="scss">
 @import '../style/general.scss';
 
-.container {
+.header_container {
     background-color: #222c36;
     width: 100vw;
     
