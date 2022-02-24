@@ -2,6 +2,7 @@
   <div id="app">
     <MyHeader />
     <MainContent />
+    <PageLoading />
     
   </div>
 </template>
@@ -10,13 +11,15 @@
 
 
 import MyHeader from './components/MyHeader.vue';
-import MainContent from './components/MainContent.vue'
+import MainContent from './components/MainContent.vue';
+
 
 export default {
   name: 'App',
   components: {
     MyHeader,
     MainContent,
+ 
    },
    
 
