@@ -31,7 +31,7 @@ export default {
 * {
     width: 100vw;
     height:100vh;
-    background-color: #17212d;
+    background-color: $colorDark;
 }
 
 

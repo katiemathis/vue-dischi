@@ -25,9 +25,9 @@ export default {
 @import '../../style/general.scss';
 
 .my_card {
-    height: 350px;
+    height: 340px;
     width: 200px;
-    background-color: #222c36;
+    background-color: $colorLight;
     &:hover {
         border: #fff 1px solid;
         cursor:pointer;

@@ -1,16 +1,20 @@
 <template>
-    <div class="container main_container">
-        <div v-if="loadingInProgress">
+    <div v-if="loadingInProgress" class="main_container">
+
+        <div class="container" >
             <PageLoading />
         </div>
+    </div>
         
-        <div v-else class="row row-cols-lg-6 row-cols-md-4 row-cols-3 justify-content-center">
+        <div v-else class="container">
+            <div class="row row-cols-lg-6 row-cols-md-4 row-cols-3 justify-content-center mx-10">
                 <SongCard 
                     v-for= "(cardItem, index) in cardItems" :key= "index"
                      :myTile= "cardItem" 
                 />
         </div>
-    </div>
+        </div>
+
 </template>
 
 <script>
@@ -71,6 +75,7 @@ export default {
     box-sizing: border-box;
     color: white;
 }
+
 
 
 

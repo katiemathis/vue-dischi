@@ -26,15 +26,21 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+
+@import './style/general.scss';
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin: 0;
+  margin: -10px;
   padding: 0;
   box-sizing: border-box;
+  background-color: $colorDark;
+  width: 100vw;
+  
 
   
 
