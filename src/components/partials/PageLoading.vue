@@ -1,11 +1,10 @@
 <template>
-  <div class="d-flex justify-content-center align-items-center page_loader" >
+    <div class="d-flex justify-content-center align-items-center page_loader" >
       <div class="cube"></div>
       <div class="cube"></div>
       <div class="cube"></div>
       <div class="cube"></div>
-
-  </div>
+    </div>
 </template>
 
 <script>
@@ -34,6 +33,8 @@ export default {
     height:100vh;
     background-color: #17212d;
 }
+
+
 
 .page_loader {
     position: fixed;

@@ -4,7 +4,7 @@
             <PageLoading />
         </div>
         
-        <div class="row row-cols-lg-6 row-cols-md-4 row-cols-3 justify-content-center" v-else>
+        <div v-else class="row row-cols-lg-6 row-cols-md-4 row-cols-3 justify-content-center">
                 <SongCard 
                     v-for= "(cardItem, index) in cardItems" :key= "index"
                      :myTile= "cardItem" 
@@ -45,11 +45,11 @@ export default {
             }
         },
         mounted() {
-            document.onreadystatechanges = () => {
+            /*document.onreadystatechanges = () => {
                 if (document.readyState == "complete") {
                     this.isloaded = true;
                 }
-            }
+            }*/
         },
         created() {
             this.getSongs();
