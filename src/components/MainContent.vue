@@ -45,7 +45,7 @@ export default {
                 return this.cardItems;
             }else{
             return this.cardItems.filter(cardItem => {
-                return cardItem.genre = this.selectedGenre;
+                return cardItem.genre == this.selectedGenre;
                 }); 
             }
         }

@@ -56,6 +56,7 @@ export default {
   box-sizing: border-box;
   background-color: $colorDark;
   width: 100vw;
+  height: 130vh;
   
 
   
