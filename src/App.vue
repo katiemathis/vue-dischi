@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <MyHeader />
-    <MainContent />
-    <PageLoading />
+    <MyHeader @selectedGenreEvt="setSelectedGenre" :genreItems="genreItems"/>
+    <MainContent @genresReady="setGenres" :selectedGenre="selectedGenre"/>
+
     
   </div>
 </template>
@@ -14,13 +14,29 @@ import MyHeader from './components/MyHeader.vue';
 import MainContent from './components/MainContent.vue';
 
 
+
 export default {
   name: 'App',
   components: {
     MyHeader,
     MainContent,
+
  
    },
+   data() {
+     return {
+       genreItems: [], 
+       selectedGenre: ''
+     }
+   },
+   methods: {
+     setGenres(genreItems) {
+       this.genreItems = genreItems;
+     },
+     setSelectedGenre(selectedGenreEvt) {
+       this.selectedGenre = selectedGenreEvt;
+     }
+   }
    
 
 }

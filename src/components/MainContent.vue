@@ -9,8 +9,9 @@
         <div v-else class="container">
             <div class="row row-cols-lg-6 row-cols-md-4 row-cols-3 justify-content-center mx-10">
                 <SongCard 
-                    v-for= "(cardItem, index) in cardItems" :key= "index"
-                     :myTile= "cardItem" 
+                    @genresReady="setGenres" :selectedGenre="selectedGenre"
+                    v-for= "(album, index) in filteredAlbums" :key= "index"
+                     :myTile= "album" 
                 />
         </div>
         </div>
@@ -22,16 +23,32 @@
 const axios = require('axios');
 
 import SongCard from './partials/SongCard.vue';
-import PageLoading from '../components/partials/PageLoading.vue'
+import PageLoading from './partials/PageLoading.vue'
 
 export default {
     name: 'MainContent',
     components: {SongCard, PageLoading},
+    props: {
+        'selectedGenre': String,
+    },
     data () {
           return {
               cardItems: [],
+              genreItems: [],
               loadingInProgress: true,
           }      
+    },
+    computed:{
+        filteredAlbums() {
+
+            if(this.selectedGenre == '') {
+                return this.cardItems;
+            }else{
+            return this.cardItems.filter(cardItem => {
+                return cardItem.genre = this.selectedGenre;
+                }); 
+            }
+        }
     },
     methods: {
             getSongs() {
@@ -40,6 +57,15 @@ export default {
                 .then((response) => {
                     this.cardItems = response.data.response;
                     this.loadingInProgress = false;
+
+                    this.cardItems.forEach(cardItem => {
+                        if (!this.genreItems.includes(cardItem.genre)) {
+                            this.genreItems.push(cardItem.genre);
+                            console.log(this.genreItems)
+                        }
+                    });
+
+                    this.$emit('genresReady', this.genreItems)
                     
                 })
                 .catch(function (error) {
