@@ -9,10 +9,11 @@
         <div v-else class="container">
             <div class="row row-cols-lg-6 row-cols-md-4 row-cols-3 justify-content-center mx-10">
                 <SongCard 
-                    @genresReady="setGenres" :selectedGenre="selectedGenre"
+                    :selectedGenre="selectedGenre"
                     v-for= "(album, index) in filteredAlbums" :key= "index"
                      :myTile= "album" 
                 />
+                <!-- @genresReady="setGenres" -->
         </div>
         </div>
 

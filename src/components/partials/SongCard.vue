@@ -15,8 +15,7 @@ export default {
     name: 'SongCard',
     props: {
         'myTile': Object,
-        'selectedGenre': String,
-        'filteredAlbums': Object,
+
     }
       
 }
